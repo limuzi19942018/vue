@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--mustache就是{{}}语法，里面可以简单的写表达式，比如两个变量相加 -->
+<div id="app">
+    {{firstName+lastName}}
+    {{firstName+'  '+lastName}}
+    <h2>{{firstName}}  {{lastName}}</h2>
+    <h2>{{counter*2}}</h2>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const app=new Vue({
+        el:'#app',
+        data:{
+            firstName:'li',
+            lastName:'yong',
+            counter:100
+        }
+    })
+</script>
+
+</body>
+</html>

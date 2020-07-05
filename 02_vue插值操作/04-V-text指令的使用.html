@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h2>{{message}} , 我不会被覆盖</h2>
+    <!--v-text就是把变量message放到dom里面跟 mustache{{}} 写法一样 -->
+    <h2 v-text="message"></h2>
+    <!--但是要注意如下这种写法，会把<h2>标签里面的东西覆盖，因为使用了V-text指令 -->
+    <h2 v-text="message">,我会被覆盖</h2>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const app=new Vue({
+        el:'#app',
+        data:{
+            message:'hahaha'
+        }
+    })
+</script>
+</body>
+</html>

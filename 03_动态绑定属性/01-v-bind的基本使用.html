@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h2>{{message}}</h2>
+    <!--动态绑定，当src属性被v-bind修饰以后，src会把imageURL当成一个变量而不是一个简单的字符串，会解析这个变量-->
+    <img v-bind:src="imageURL" alt="">
+    <h2><a v-bind:href="aHref">点我一下百度</a></h2>
+    <!--v-bind语法糖的写法 : 等同于 v-bind: 如下图列子所示  -->
+    <img :src="imageURL" alt="">
+    <h2><a :href="aHref">点我一下百度</a></h2>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const app=new Vue({
+        el:'#app',
+        data:{
+            message:'hahaha',
+            imageURL:'https://img10.360buyimg.com/babel/s150x150_jfs/t18832/326/1752197449/405003/5ed242ec/5ad5dd0eN8aa5fd17.jpg',
+            aHref:'http://www.baidu.com'
+        }
+    })
+</script>
+</body>
+</html>

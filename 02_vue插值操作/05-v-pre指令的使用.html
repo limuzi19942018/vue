@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h2>{{message}}</h2>
+    <!--v-pre指令就是不让vue语法解析 {{}}里面的变量，也就是说如下的<h2>标签里面是什么东西，页面就展示什么东西 -->
+    <h2 v-pre>{{message}}</h2>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const app=new Vue({
+        el:'#app',
+        data:{
+            message:'hahaha'
+        }
+    })
+</script>
+</body>
+</html>

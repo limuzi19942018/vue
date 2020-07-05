@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h2>{{url}}</h2>
+    <a href="http://www.baidu.com">快点我</a>
+    <!--v-html指令的使用方法时解析变量中的标签，把<a>标签去掉 -->
+    <h2 v-html="url"></h2>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const app=new Vue({
+        el:'#app',
+        data:{
+            url:'<a href="http://www.baidu.com">请点我</a>'
+        }
+    })
+</script>
+</body>
+</html>

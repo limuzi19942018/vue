@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .title{
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <!--<h2 :style="{key(属性名，比如font-size):value(属性值 ，比如 11px)}">{{message}}</h2>-->
+    <h2 v-bind:style="{fontSize:'50px'}">{{message}}</h2>
+    <h2 v-bind:style="{fontSize: fontSizeValue,color:fontColor}">{{message}}</h2>
+    <h2 v-bind:style="getStyle()">{{message}}</h2>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const app=new Vue({
+        el:'#app',
+        data:{
+            message:'hahaha',
+            fontSizeValue:'100px',
+            fontColor:'red'
+        },
+        methods:{
+            getStyle:function () {
+                return {fontSize: this.fontSizeValue,color:this.fontColor}
+
+            }
+        }
+    })
+</script>
+</body>
+</html>

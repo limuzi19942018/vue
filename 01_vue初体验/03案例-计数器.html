@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h2>当前计数:{{counter}}</h2>
+    <!--展示两个按钮-->
+    <!--v-on表示页面监听事件，后面的click表示的是监听页面的click点击事件，然后“”里面的counter++表示变量加1-->
+    <!--<button v-on:click="counter++">+</button>
+    <button v-on:click="counter--">-</button>-->
+    <button v-on:click="add">+</button>
+    <!--语法糖：@click 就等同于v-on:click-->
+    <button @click="sub">-</button>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    /*跟java一样，new一个 app对象 */
+    const app=new Vue({
+        /*el是执行挂载元素，将<div id='app'>交给el处理*/
+        el:'#app',
+        data:{
+            //定义一个变量
+            counter:0
+        },
+        /*定义函数方法*/
+        methods:{
+            /*自定义一个增加方法add, add是一个方法名，function表示这是一个方法*/
+            add:function () {
+                /*console.log的快捷键是---- ‘日志信息’.log 然后回车即可  */
+                console.log('add方法被执行了');
+                /*this就是表示app对象*/
+                this.counter++
+            },
+            /*自定义一个减少方法*/
+            sub:function () {
+                console.log('sub方法被执行力');
+                this.counter--
+            }
+        }
+    })
+
+</script>
+</body>
+</html>

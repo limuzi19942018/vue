@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--class后面跟的是一个数组-->
+    <h2 :class="[active,line]">{{message}}</h2>
+    <!--注意数组里面的值加了 ‘’ 号就是字符串常量，不加 ‘’ 就是变量 -->
+    <h2 :class="['active','line']">{{message}}</h2>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const app=new Vue({
+        el:'#app',
+        data:{
+            message:'hahaha',
+            active:'aaa',
+            line:'bbbb'
+        }
+    })
+</script>
+</body>
+</html>

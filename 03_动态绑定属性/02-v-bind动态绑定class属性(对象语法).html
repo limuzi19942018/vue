@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .active{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <!--<h2>{{message}}</h2>-->
+    <!--<h2 class="{类名1: boolean, 类名2: boolean}">{{message}}</h2>-->
+    <!--class属性后面的{}里面是个对象，对象里面时键 值-->
+    <!--下面的列子里面的第一个class属性是固定的，不会变的，第二个class属性是动态绑定的-->
+    <h2 class="title" v-bind:class="{active: isActive,line:isLine}">{{message}}</h2>
+    <!--定义一个函数把上面class里面的东西放到函数里面,下面的写法和上面的写法同意效果-->
+    <h2 class="title" v-bind:class="getClasses()">{{message}}</h2>
+    <button v-on:click="btnClick">按钮</button>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const app=new Vue({
+        el:'#app',
+        data:{
+            message:'hahaha',
+            isActive:true,
+            isLine:true
+        },
+        methods:{
+            btnClick:function () {
+                this.isActive=!this.isActive
+            },
+            getClasses:function () {
+                return {active: this.isActive,line:this.isLine}
+
+            }
+        }
+    })
+</script>
+</body>
+</html>
